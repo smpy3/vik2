@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vikram Mehta • Interactive Gaming Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #0e0e14;
+      --panel-bg: rgba(30,30,45,0.95);
+      --accent1: #00c6ff;
+      --accent2: #0072ff;
+      --highlight-bg: #0072ff;
+      --highlight-text: #ffffff;
+      --text-light: #e0e0e0;
+      --text-muted: #888;
+      --grid: rgba(255,255,255,0.02);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Montserrat',sans-serif;
+      background:var(--bg-dark);
+      color:var(--text-light);
+      overflow-x:hidden;
+    }
+    .wrapper {
+      position:relative;
+      max-width:1000px;
+      margin:40px auto;
+      padding:20px;
+      background-color: var(--bg-dark);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-family:'Orbitron',sans-serif;
+      font-size:2.8rem;
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .contact {
+      font-size:0.9rem;
+      color:var(--text-muted);
+      margin-top: 10px;
+    }
+    .btn-download {
+      margin: 10px auto;
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--highlight-bg);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .panel {
+      background: var(--panel-bg);
+      padding: 24px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .panel h2 {
+      font-family:'Orbitron',sans-serif;
+      font-size:1.3rem;
+      color: var(--accent1);
+      margin-bottom: 12px;
+    }
+    .panel ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .panel li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .panel li::before {
+      content: "★";
+      color: var(--accent2);
+      position: absolute;
+      left: 0;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+    canvas {
+      display: block;
+      margin: 10px auto;
+      background: black;
+      border: 2px solid var(--accent2);
+    }
+    #controls, #scoreBoard, #message {
+      text-align: center;
+      color: var(--accent1);
+      margin: 5px 0;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper" id="resume-content">
+    <header>
+      <h1>Vikram Mehta</h1>
+      <div class="contact">
+        Senior Product Manager • Gaming & Tech<br>
+        21 Rosepac Avenue, Brampton, Canada, L6Z 3S1<br>
+        (647) 982-9684 • <a href="mailto:vikram9@live.com" style="color: var(--accent1)">vikram9@live.com</a>
+      </div>
+      <button class="btn-download" onclick="downloadPDF()">Download Résumé PDF</button>
+    </header>
+
+    <section class="panel">
+      <h2>PROFESSIONAL SUMMARY</h2>
+      <p>Senior Product Manager with over 13 years of experience in the gaming industry, excelling in user experience and game development. Demonstrates a visionary approach to enhancing player engagement and retention through innovative live-ops strategies and data-driven insights. Committed to driving product growth and fostering collaborative team environments, with proven success in optimizing monetization and stakeholder management.</p>
+    </section>
+
+    <div class="two-col">
+
+
+
+      <section class="panel">
+      <h2>EXPERIENCE</h2>
+      <ul>
+        <li><strong>Sr. Product Manager, Behaviour Interactive</strong><br>Aug 2022 – Aug 2024 | Canada
+          <ul>
+            <li>Designed and executed live-ops strategies, achieving 95% player retention during a major tech migration</li>
+            <li>Drove AREM initiatives for AAA titles, significantly boosting user engagement and monetization</li>
+            <li>Partnered with engineering to build internal tools that improved user re-engagement workflows</li>
+            <li>Leveraged player data and feedback to fuel product growth and feature development</li>
+          </ul>
+        </li>
+        <li><strong>Sr. Product Manager, Big Viking Games</strong><br>Mar 2019 – Aug 2022 | Canada
+          <ul>
+            <li>Led live-ops planning and introduced innovative content strategies to drive player interest</li>
+            <li>Developed contextual reward systems and integrated scalable communication tools</li>
+            <li>Delivered product initiatives on-time with a strong work ethic and agile collaboration</li>
+          </ul>
+        </li>
+        <li><strong>Product Consultant, Jet Synthesys</strong><br>Apr 2017 – Mar 2019 | Canada
+          <ul>
+            <li>Optimized in-game economy to enhance player satisfaction and retention</li>
+            <li>Validated user insights via A/B testing and implemented feedback-driven improvements</li>
+            <li>Orchestrated cross-platform feature development across mobile and console</li>
+          </ul>
+        </li>
+        <li><strong>Product Manager, Reliance Games</strong><br>Feb 2014 – Mar 2017 | India
+          <ul>
+            <li>Directed monetization strategies for Real Steel, increasing player LTV and ARPU</li>
+            <li>Established ad frameworks that balanced revenue goals with positive user experience</li>
+          </ul>
+        </li>
+        <li><strong>QA Engineer, Reliance Games</strong><br>Feb 2011 – Jan 2014 | India
+          <ul>
+            <li>Led QA for mobile titles, authoring test plans and driving cross-platform coverage</li>
+            <li>Co-developed Real Steel Friends and implemented anti-piracy measures for in-app purchases</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+
+      <section class="panel">
+        <h2>SKILLS & TOOLS</h2>
+        <ul>
+          <li>Product Strategy, Monetization, Live-ops</li>
+          <li>Customer Retention, UX, Stakeholder Management</li>
+          <li>Data Analysis, A/B Testing, SQL</li>
+          <li>Agile SCRUM, Roadmapping, Time Management</li>
+          <li>Game Development, Market Research</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>EDUCATION</h2>
+      <ul>
+        <li><strong>B.E. in Electronics and Telecommunication</strong><br>
+          Savitribai Phule Pune University, Pune, India (2003 - 2009)<br>
+          Graduated with First Class
+        </li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>PLAY “SPACE INVADERS”</h2>
+      <div id="controls">Use ← → to move • Space to shoot</div>
+      <canvas id="gameCanvas" width="320" height="480"></canvas>
+      <div id="scoreBoard">Score: 0</div>
+      <div id="message"></div>
+    </section>
+
+
+  </div>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas'), ctx = canvas.getContext('2d');
+    const scoreBoard = document.getElementById('scoreBoard'), message = document.getElementById('message');
+    let player, aliens, dir, score, gameOver;
+
+    function init() {
+      player = { w:40, h:20, x:(canvas.width-40)/2, y:canvas.height-30, speed:4, bullets:[] };
+      const cols=5, rows=2, alienSize=30, gap=20; aliens = [];
+      const totalW = cols*alienSize + (cols-1)*gap, startX = (canvas.width - totalW)/2;
+      for(let r=0;r<rows;r++)
+        for(let c=0;c<cols;c++)
+          aliens.push({ x:startX + c*(alienSize+gap), y:30 + r*(alienSize+gap), size:alienSize, alive:true });
+      dir = 1; score = 0; gameOver = false;
+      scoreBoard.textContent = 'Score: 0'; message.textContent = '';
+      requestAnimationFrame(draw);
+    }
+
+    function draw() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      if(gameOver) return;
+      let shift=false;
+      aliens.forEach(a => { if(a.alive){ a.x+=dir; if(a.x<0||a.x+a.size>canvas.width) shift=true; } });
+      if(shift){ dir*=-1; aliens.forEach(a => { if(a.alive) a.y+=a.size/2; }); }
+      ctx.fillStyle='cyan';
+      aliens.filter(a => a.alive).forEach(a => ctx.fillRect(a.x,a.y,a.size,a.size));
+      ctx.fillStyle='lime';
+      ctx.fillRect(player.x, player.y, player.w, player.h);
+      ctx.fillStyle='yellow';
+      player.bullets = player.bullets.filter(b => b.y>-10);
+      player.bullets.forEach(b => {
+        b.y -= 6; ctx.fillRect(b.x,b.y,4,10);
+        aliens.forEach(a => {
+          if(a.alive && b.x > a.x && b.x < a.x + a.size && b.y > a.y && b.y < a.y + a.size){
+            a.alive = false; b.hit=true; score+=10;
+          }
+        });
+      });
+      player.bullets = player.bullets.filter(b => !b.hit);
+      scoreBoard.textContent = "Score: " + score;
+      if(aliens.every(a => !a.alive)){ gameOver=true; message.textContent="You Win!"; }
+      else if(aliens.some(a => a.alive && a.y > player.y)){ gameOver=true; message.textContent="Game Over!"; }
+      else requestAnimationFrame(draw);
+    }
+
+    document.addEventListener('keydown', e => {
+      if(gameOver) return;
+      if(e.key === 'ArrowLeft') player.x = Math.max(0, player.x - player.speed);
+      if(e.key === 'ArrowRight') player.x = Math.min(canvas.width - player.w, player.x + player.speed);
+      if(e.key === ' ') player.bullets.push({ x: player.x + player.w/2 - 2, y: player.y });
+    });
+
+    init();
+
+    function downloadPDF() {
+      const element = document.getElementById("resume-content");
+      html2pdf().set({
+        filename: 'Vikram_Mehta_Resume.pdf',
+        margin: [0.5, 0.5],
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).from(element).save();
+    }
+  </script>
+</body>
+</html>
